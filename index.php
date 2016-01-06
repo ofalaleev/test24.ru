@@ -8,4 +8,5 @@ $a = ($b = 4) + 5;
 echo $a;
 echo $b;
 echo $String;
+$f = 5;
 ?>
