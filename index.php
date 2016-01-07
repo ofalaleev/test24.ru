@@ -1,12 +1,23 @@
+﻿<a href="clear_page.php">1 page</a>
+<p>
 <?php
-$Integer = 1;
-$Float = 0.0003;
-$Boolean  = true;
-$String = '�����';
-echo 'Hello world ';
-$a = ($b = 4) + 5;
-echo $a;
-echo $b;
-echo $String;
-$f = 5;
+//Принимаем постовые данные
+$name=$_POST['name'];
+$surname=$_POST['surname'];
+$phone=$_POST['phone'];
+ 
+//обращаемся к глобальной переменной SERVER
+$ip = $_SERVER['REMOTE_ADDR'];
+ 
+//формируем строку для записи
+$str=$name.' '.$surname.', '.$phone.', '.$ip.'\r\n';
+ 
+//открываем файл для записи.Если файл не существует-он будет создан
+$fopen  =  fopen('my_form_reports.txt', 'a+');
+//записываем строку
+fputs ($fopen, $str);
+//закрываем файл
+fclose ($fopen);
+
 ?>
+
