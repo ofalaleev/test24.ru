@@ -1,23 +1,38 @@
 ﻿<a href="clear_page.php">1 page</a>
-<p>
+</br>
 <?php
-//Принимаем постовые данные
-$name=$_POST['name'];
-$surname=$_POST['surname'];
-$phone=$_POST['phone'];
- 
-//обращаемся к глобальной переменной SERVER
-$ip = $_SERVER['REMOTE_ADDR'];
- 
-//формируем строку для записи
-$str=$name.' '.$surname.', '.$phone.', '.$ip.'\r\n';
- 
-//открываем файл для записи.Если файл не существует-он будет создан
-$fopen  =  fopen('my_form_reports.txt', 'a+');
-//записываем строку
-fputs ($fopen, $str);
-//закрываем файл
-fclose ($fopen);
-
+//Вводим переменные
+$number = 8;
+$float = -3.2;
+$integer = 1;
+$string = "Привет мир";
+$bool = true;
+//Выводим переменные
+echo "Переменная number = $number";
+echo "</br>";
+echo "Переменная float = $float";
+echo "</br>";
+echo "Переменная integer = $integer";
+echo "</br>";
+echo "Переменная string = $string";
+echo "</br>";
+echo "Переменная bool = $bool";
+echo "</br>";
+//Объявляем константу
+define("BIG", 2);
+//Тут же её и выводим
+echo "Константа BIG = ";
+echo BIG;
+echo "</br>";//отступ строки
+//Арифметические операции
+$x = 6;
+$y = 13;
+$z = 43;
+$summ = $x + $y;
+$diff = $y - $x;
+$multiply = $x * $y;
+$devide = $y / $x;
+echo "Выводим сумму $x и $y равную $summ </br>";
+echo "Выводим разницу $y и $x равную $diff </br>"
 ?>
 
